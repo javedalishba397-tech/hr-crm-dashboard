@@ -1,0 +1,633 @@
+/* .counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+} */
+
+/* src/App.css */
+/* src/App.css - Premium Glassmorphism Login Design */
+
+/* --- 1. GLOBAL RESET & BACKGROUND --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Beautiful animated gradient background */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  padding: 20px;
+}
+
+/* Background animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- 2. THE GLASS CARD (Login Container) --- */
+.login-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 50px 40px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Smooth entrance animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.login-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+/* --- 3. HEADER / TITLE --- */
+.login-container h2 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Add a subtle subtitle (optional – works even if you don't have a <p> tag) */
+.login-container h2::after {
+  content: '🔐 Access your dashboard';
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+
+/* --- 4. FORM FIELDS (Modern Floating Style) --- */
+.login-container form div {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+/* Labels - clean and minimal */
+.login-container label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Input fields - glass style */
+.login-container input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  font-size: 16px;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Placeholder text color */
+.login-container input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+}
+
+/* Focus state - glowing border */
+.login-container input:focus {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Autofill style override */
+.login-container input:-webkit-autofill {
+  background: rgba(255, 255, 255, 0.2) !important;
+  -webkit-text-fill-color: #ffffff !important;
+  -webkit-box-shadow: 0 0 0 30px rgba(255,255,255,0.1) inset !important;
+}
+
+/* --- 5. SUBMIT BUTTON (Gradient + Hover Magic) --- */
+.login-container button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.35);
+  text-transform: uppercase;
+}
+
+.login-container button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 35px rgba(245, 87, 108, 0.5);
+  background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);
+}
+
+.login-container button:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 15px rgba(245, 87, 108, 0.3);
+}
+
+/* --- 6. RESPONSIVE TWEAKS --- */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px 30px;
+    border-radius: 20px;
+  }
+
+  .login-container h2 {
+    font-size: 26px;
+  }
+
+  .login-container h2::after {
+    font-size: 12px;
+  }
+
+  .login-container input {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  .login-container button {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
+/* ==========================================
+   NEW: DASHBOARD, SIDEBAR & EMPLOYEE TABLE
+   ========================================== */
+
+/* --- 1. DASHBOARD LAYOUT --- */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f7fc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- 2. SIDEBAR STYLES --- */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #2d2b4e 0%, #1a1a2e 100%);
+  color: #ffffff;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-brand {
+  font-size: 26px;
+  font-weight: 700;
+  padding: 10px 25px 30px 25px;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  padding: 14px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar nav ul li:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-left-color: #f5576c;
+}
+
+.sidebar nav ul li.active {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border-left-color: #f5576c;
+  font-weight: 600;
+}
+
+/* --- 3. MAIN CONTENT AREA --- */
+.main-content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+}
+
+/* --- 4. PAGE HEADER --- */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.add-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.35);
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.45);
+}
+
+/* --- 5. EMPLOYEE TABLE --- */
+.table-container {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+table thead th {
+  text-align: left;
+  padding: 16px 15px;
+  background: #f8f9fc;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+table tbody td {
+  padding: 16px 15px;
+  border-bottom: 1px solid #f0f2f5;
+  color: #333;
+}
+
+table tbody tr:hover {
+  background: #f8f9fc;
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status badges */
+.status-active {
+  color: #2e7d32;
+  font-weight: 600;
+  background: #e8f5e9;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.status-inactive {
+  color: #c62828;
+  font-weight: 600;
+  background: #ffebee;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+/* Add these new status colors for Attendance and Leave */
+
+.status-present {
+  color: #2e7d32;
+  font-weight: 600;
+  background: #e8f5e9;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.status-late {
+  color: #e65100;
+  font-weight: 600;
+  background: #fff3e0;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.status-absent {
+  color: #c62828;
+  font-weight: 600;
+  background: #ffebee;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.status-approved {
+  color: #2e7d32;
+  font-weight: 600;
+  background: #e8f5e9;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.status-pending {
+  color: #e65100;
+  font-weight: 600;
+  background: #fff3e0;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.status-rejected {
+  color: #c62828;
+  font-weight: 600;
+  background: #ffebee;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* Disabled menu item */
+.sidebar nav ul li.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* --- 6. RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+  }
+  .sidebar-brand {
+    font-size: 14px;
+    padding: 10px 15px 20px 15px;
+    text-align: center;
+  }
+  .sidebar nav ul li {
+    padding: 14px 10px;
+    font-size: 12px;
+    text-align: center;
+    word-break: break-word;
+  }
+  .main-content {
+    padding: 20px;
+  }
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .page-header h1 {
+    font-size: 22px;
+  }
+}
